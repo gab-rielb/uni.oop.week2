@@ -10,9 +10,12 @@ namespace lecture2
     {
         internal class Student
         {
+            // Class attributes (private therefore encapsulated)
             private string _Name;
             private string _Module;
             private int _Mark;
+
+            // Setter functions for attributes
             public string Name {
                 get { return _Name; }
                 set {
@@ -40,11 +43,14 @@ namespace lecture2
                 }
             }
 
+            // Objects (only object needed is student)
             public Student(string _Name, string _Module, int _Mark) {
                 Name = _Name;
                 Module = _Module;
                 Mark = _Mark;
             }
+
+            // Object functionality
             public void DisplayInfo() {
                 Console.WriteLine($"The student: {Name} attended the module {Module} and was marked with {Mark}.");
             }
@@ -73,6 +79,8 @@ namespace lecture2
             }
         }
         static void Main(string[] args) {
+
+            // Creating different instances of the student object to show functionality of the student class
             Student charlieprofile = new Student("Charlie", "OOP", 41);
             charlieprofile.DisplayInfo();
             charlieprofile.ComputeGradeCategory();
