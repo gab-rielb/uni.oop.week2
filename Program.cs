@@ -48,10 +48,31 @@ namespace lecture2
             public void DisplayInfo() {
                 Console.WriteLine($"The student: {Name} attended the module {Module} and was marked with {Mark}.");
             }
+            public void ComputeGradeCategory() {
+                if (Mark == 0) {
+                    Console.WriteLine("Missing Mark");
+                }
+                else {
+                    if (Mark >= 40 && Mark < 50) {
+                        Console.WriteLine($"{Name} with {Mark} you pass.");
+                    }
+                    else if(Mark >= 50 && Mark < 60) {
+                        Console.WriteLine($"{Name} with {Mark} you get a 2:2.");
+                    }
+                    else if(Mark >= 60 && Mark < 70) {
+                        Console.WriteLine($"{Name} with {Mark} you get a 2:1.");
+                    }
+                    else {
+                        Console.WriteLine($"{Name} with {Mark} you get a 1st.");
+                    }
+                }
+
+            }
         }
         static void Main(string[] args) {
-            Student charlie = new Student("charlie", "OOP", 45);
+            Student charlie = new Student("Charlie", "OOP", 100);
             charlie.DisplayInfo();
+            charlie.ComputeGradeCategory();
         }
     }
 }
