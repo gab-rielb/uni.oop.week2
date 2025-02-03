@@ -53,7 +53,10 @@ namespace lecture2
                     Console.WriteLine("Missing Mark");
                 }
                 else {
-                    if (Mark >= 40 && Mark < 50) {
+                    if (Mark < 40) {
+                        Console.WriteLine($"{Name} with {Mark} you fail.");
+                    }
+                    else if (Mark >= 40 && Mark < 50) {
                         Console.WriteLine($"{Name} with {Mark} you pass.");
                     }
                     else if(Mark >= 50 && Mark < 60) {
@@ -62,7 +65,7 @@ namespace lecture2
                     else if(Mark >= 60 && Mark < 70) {
                         Console.WriteLine($"{Name} with {Mark} you get a 2:1.");
                     }
-                    else {
+                    else{
                         Console.WriteLine($"{Name} with {Mark} you get a 1st.");
                     }
                 }
@@ -70,9 +73,30 @@ namespace lecture2
             }
         }
         static void Main(string[] args) {
-            Student charlie = new Student("Charlie", "OOP", 100);
-            charlie.DisplayInfo();
-            charlie.ComputeGradeCategory();
+            Student charlieprofile = new Student("Charlie", "OOP", 41);
+            charlieprofile.DisplayInfo();
+            charlieprofile.ComputeGradeCategory();
+            Console.WriteLine();
+
+            Student oliviaprofile = new Student("Olivia", "OOP", 12);
+            oliviaprofile.DisplayInfo();
+            oliviaprofile.ComputeGradeCategory();
+            Console.WriteLine();
+
+            Student tashasprofile = new Student("Tasha", "OOP", 89);
+            tashasprofile.DisplayInfo();
+            tashasprofile.ComputeGradeCategory();
+            Console.WriteLine();
+
+            Student bellaprofile = new Student("Bella", "OOP", 65);
+            bellaprofile.DisplayInfo();
+            bellaprofile.ComputeGradeCategory();
+            Console.WriteLine();
+
+            Student gabrielprofile = new Student("Gabriel", "OOP", 101);
+            gabrielprofile.DisplayInfo();
+            gabrielprofile.ComputeGradeCategory();
+
         }
     }
 }
